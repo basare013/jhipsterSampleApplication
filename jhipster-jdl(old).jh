@@ -1,0 +1,42 @@
+//entity User {
+//    id Integer required,
+//    userName String,
+//    password String,
+//    firstName String,
+//    lastName String,
+//    task String
+//}
+
+
+entity Task {
+	id Integer required,
+    title String,
+    description String,
+    done Boolean,
+    createdDate Instant,
+    schedule ZonedDateTime,
+	priority String
+}
+
+entity Comment {
+	comment String
+}
+
+// defining multiple OneToMany relationships with comments
+relationship ManyToOne {
+	Task{User(login)} to User{task}
+}
+
+//relationship OneToMany {
+	//Task to Comment{Task(title)}
+//}
+
+
+// Set pagination options
+
+paginate Task with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+
