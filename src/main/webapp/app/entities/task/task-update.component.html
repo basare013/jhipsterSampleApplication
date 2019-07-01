@@ -71,7 +71,15 @@
                 </div>
             </div>
             <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                <button id="jh-create-entity" class="btn btn-primary float-left jh-create-entity create-comment" [routerLink]="['/comment/new']">
+                    <fa-icon [icon]="'plus'"></fa-icon>
+                    <span >
+                        Add Comment
+                    </span>
+                </button>
+            </div>
+            <div class="float-right">
+                <button type="button" id="cancel-save" class="btn btn-secondary "  (click)="previousState()">
                     <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
                 </button>
                 <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
